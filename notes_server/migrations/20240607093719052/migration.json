@@ -1,0 +1,69 @@
+{
+  "actions": [
+    {
+      "type": "deleteTable",
+      "deleteTable": "note"
+    },
+    {
+      "type": "createTable",
+      "createTable": {
+        "name": "note",
+        "dartName": "Note",
+        "module": "notes",
+        "schema": "public",
+        "columns": [
+          {
+            "name": "id",
+            "columnType": 6,
+            "isNullable": false,
+            "columnDefault": "nextval('note_id_seq'::regclass)",
+            "dartType": "int?"
+          },
+          {
+            "name": "text",
+            "columnType": 0,
+            "isNullable": false,
+            "dartType": "String"
+          }
+        ],
+        "foreignKeys": [],
+        "indexes": [
+          {
+            "indexName": "note_pkey",
+            "elements": [
+              {
+                "type": 0,
+                "definition": "id"
+              }
+            ],
+            "type": "btree",
+            "isUnique": true,
+            "isPrimary": true
+          }
+        ],
+        "managed": true
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "type": "columnDropped",
+      "message": "Column \"test\" of table \"note\" will be dropped.",
+      "table": "note",
+      "columns": [
+        "test"
+      ],
+      "destrucive": true
+    },
+    {
+      "type": "tableDropped",
+      "message": "One or more columns are added to table \"note\" which cannot be added in a table migration. The complete table will be deleted and recreated.",
+      "table": "note",
+      "columns": [
+        "text"
+      ],
+      "destrucive": true
+    }
+  ],
+  "migrationApiVersion": 1
+}

@@ -1,0 +1,6 @@
+### Holds a note written by the user in the server.
+class: Note
+table: note
+fields:
+  ### The contents of the note.
+  text: String
